@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-route.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="listContrl">
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>age</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-show="listData.length == 0">
+                <td colspan="4">没有数据</td>
+            </tr>
+            <tr ng-repeat="item in listData" ng-show="listData.length > 0">
+                <td ng-bind="item.id"></td>
+                <td ng-bind="item.name"></td>
+                <td ng-bind="item.age"></td>
+                <td>
+                    <button ng-click="del(item)">删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+</html>
+<script src="../controller/goods-list.js"></script>
